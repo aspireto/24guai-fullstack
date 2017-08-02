@@ -10,12 +10,12 @@ app.config(function($routeProvider){
 		//the login display
 		.when('/login', {
 			templateUrl: 'login.html',
-			controller: 'authController'
+			// controller: 'authController'
 		})
 		//the signup display
 		.when('/register', {
 			templateUrl: 'register.html',
-			controller: 'authController'
+			// controller: 'authController'
 		})
 
 		//报名
@@ -26,6 +26,11 @@ app.config(function($routeProvider){
 		.when('/intro',{
 			templateUrl: 'intro.html',
 			controller: 'mainController'
+		})
+
+		//
+		.when('/success',{
+			templateUrl: 'success.html' 
 		});
 });
 
@@ -123,7 +128,7 @@ app.controller('mainController',function($scope){
     // }
 });
 
-app.controller('formController',function($scope, $http){
+app.controller('formController',function($scope, $http, $location){
 	// $scope.submitted = false;
 	$scope.submit = function(){
 		
@@ -152,7 +157,7 @@ app.controller('formController',function($scope, $http){
 				'Content-Type': undefined
 			}
 		}).then(function successCallback(res){
-
+			$location.path('/success');
 		},function errorCallback(res){
 			console.log(res);
 		});

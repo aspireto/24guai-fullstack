@@ -14,7 +14,7 @@
         
         <div class="form-group">
             <label for="tel">移动电话</label>
-            <input type="tel" ng-model="user.tel" placeholder="移动电话" class="form-control" id="tel" name="tel">
+            <input required="" type="tel" ng-model="user.tel" placeholder="移动电话" class="form-control" id="tel" name="tel">
             <p class="text-danger" ng-show="signForm.tel.$error.required && signForm.$submitted">请填写移动电话</p>
         </div>
         <div class="form-group">
@@ -31,37 +31,37 @@
         
         <div class="form-group">
             <label for="idcard">身份证号码</label>
-            <input type="text" ng-model="user.idcard" placeholder="身份证号码" class="form-control" id="idcard" name="idcard">
+            <input required="" type="text" ng-model="user.idcard" placeholder="身份证号码" class="form-control" id="idcard" name="idcard">
             <p class="text-danger" ng-show="signForm.idcard.$error.required && signForm.$submitted">请填写身份证号码</p>
         </div>
         <div class="form-group">
             <label for="birthday">出生年月</label>
-            <input type="date" ng-model="user.birthday" class="form-control" id="birthday" name="birthday">
+            <input required="" type="date" ng-model="user.birthday" class="form-control" id="birthday" name="birthday">
             <p class="text-danger" ng-show="signForm.birthday.$error.required && signForm.$submitted">请填写出生年月</p>
         </div>
         <div class="form-group">
             <label for="driver">驾驶证号码</label>
-            <input type="text" ng-model="user.driver" placeholder="驾驶证号码" class="form-control" id="driver" name="driver">
+            <input required="" type="text" ng-model="user.driver" placeholder="驾驶证号码" class="form-control" id="driver" name="driver">
             <p class="text-danger" ng-show="signForm.driver.$error.required && signForm.$submitted">请填写驾驶证号码</p>
         </div>
         <div class="form-group">
             <label for="">参赛车型</label>
-            <input type="text" ng-model="user.models" placeholder="参赛车型" class="form-control" id="models" name="models">
+            <input required="" type="text" ng-model="user.models" placeholder="参赛车型" class="form-control" id="models" name="models">
             <p class="text-danger" ng-show="signForm.models.$error.required && signForm.$submitted">请填写参赛车型</p>
         </div>
         <div class="form-group">
             <label for="">运动执照号码</label>
-            <input type="text" ng-model="user.license" placeholder="运动执照号码" class="form-control" id="license" name="license">
+            <input required="" type="text" ng-model="user.license" placeholder="运动执照号码" class="form-control" id="license" name="license">
             <p class="text-danger" ng-show="signForm.license.$error.required && signForm.$submitted">请填写运动执照号码</p>
         </div>
         <div class="form-group">
             <label for="">发动机排量</label>
-            <input type="text" ng-model="user.amount" placeholder="发动机排量" class="form-control" id="amount" name="amount">
+            <input required="" type="text" ng-model="user.amount" placeholder="发动机排量" class="form-control" id="amount" name="amount">
             <p class="text-danger" ng-show="signForm.amount.$error.required && signForm.$submitted">请填写发动机排量</p>
         </div>
         <div class="form-group">
             <label for="">运动执照级别</label>
-            <select class="form-control" ng-model="user.level" name="level">
+            <select required="" class="form-control" ng-model="user.level" name="level">
                 <option>R</option>
                 <option>F</option>
             </select>
@@ -69,7 +69,7 @@
         </div>
         <div class="form-group">
             <label for="">报名组别</label>
-            <select class="form-control" ng-model="user.group" name="group">
+            <select required="" class="form-control" ng-model="user.group" name="group">
                 <option>A组拉力车2000cc</option>
                 <option>B组拉力车1600cc</option>
                 <option>C组场地车</option>
@@ -79,7 +79,7 @@
         </div>
         <div class="form-group">
             <label for="">报名费用</label>
-            <select class="form-control" ng-model="user.price" name="price">
+            <select required="" class="form-control" ng-model="user.price" name="price">
                 <option>A、B组 / 1500RMB</option>
                 <option>C、D组 / 500RMB</option>
             </select>
@@ -88,21 +88,21 @@
         
         <div class="form-group">
             <label for="workaddress">工作单位</label>
-            <input type="text" ng-model="user.workaddress" placeholder="工作单位" class="form-control" id="workaddress" name="workaddress">
+            <input required="" type="text" ng-model="user.workaddress" placeholder="工作单位" class="form-control" id="workaddress" name="workaddress">
             <p class="text-danger" ng-show="signForm.workaddress.$error.required && signForm.$submitted">请填写工作单位</p>
         </div>
         <div class="form-group">
             <label for="address">通讯地址</label>
-            <input type="text" ng-model="user.address" placeholder="通讯地址" class="form-control" id="address" name="address">
+            <input required="" type="text" ng-model="user.address" placeholder="通讯地址" class="form-control" id="address" name="address">
             <p class="text-danger" ng-show="signForm.address.$error.required && signForm.$submitted">请填写通讯地址</p>
         </div>
         <div class="form-group">
             <label for="now">填写日期</label>
-            <input type="date" ng-model="user.now" class="form-control" id="now" name="now">
+            <input required="" type="date" ng-model="user.now" class="form-control" id="now" name="now">
             <p class="text-danger" ng-show="signForm.now.$error.required && signForm.$submitted">请填写提交日期</p>
         </div>
         <button class="btn btn-primary form-control">提交</button>
     </form>
-    <pre>user = {{user | json }}</pre>
-    <pre>master = {{master | json }}</pre>
+    <!--<pre>user = {{user | json }}</pre>
+    <pre>master = {{master | json }}</pre>-->
 </div>

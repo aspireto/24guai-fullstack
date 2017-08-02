@@ -1,0 +1,108 @@
+<div class="container" ng-controller="formController">
+    <form id="form_1" name="signForm" novalidate class="form-auth" ng-submit="submit()">
+        <h1></h1>
+        <div class="form-group">
+            <label for="username">姓名</label>
+            <input required="" type="text" ng-model="user.username" placeholder="姓名" class="form-control" name="username" id="username">
+            <p class="text-danger" ng-show="signForm.username.$error.required && signForm.$submitted">请填写姓名</p>
+        </div>
+        <div class="form-group">
+            <label for="files">头像照片</label>
+            <input type="file" ng-model="user.avator" placeholder="头像" class="form-control" id="files" name="avator">
+            <p class="text-danger">{{user.msg2}}</p>
+        </div>
+        
+        <div class="form-group">
+            <label for="tel">移动电话</label>
+            <input type="tel" ng-model="user.tel" placeholder="移动电话" class="form-control" id="tel" name="tel">
+            <p class="text-danger" ng-show="signForm.tel.$error.required && signForm.$submitted">请填写移动电话</p>
+        </div>
+        <div class="form-group">
+            <!--<div ng-repeat="user in sexlist">
+                <input type="radio" ng-model="$parent.sex" value="{{user.val}}" id="{{user.val}}">
+                <label for="{{user.val}}">{{user.sex}}</label>
+            </div>-->
+            <input type="radio" ng-model="user.sex" value="male" id="male">
+            <label class="sex"  for="male">男</label>
+            <input type="radio" ng-model="user.sex" value="female" id="female">
+            <label class="sex" for="female">女</label>  
+            <p class="text-danger">{{user.msg}}</p>
+        </div>
+        
+        <div class="form-group">
+            <label for="idcard">身份证号码</label>
+            <input type="text" ng-model="user.idcard" placeholder="身份证号码" class="form-control" id="idcard" name="idcard">
+            <p class="text-danger" ng-show="signForm.idcard.$error.required && signForm.$submitted">请填写身份证号码</p>
+        </div>
+        <div class="form-group">
+            <label for="birthday">出生年月</label>
+            <input type="date" ng-model="user.birthday" class="form-control" id="birthday" name="birthday">
+            <p class="text-danger" ng-show="signForm.birthday.$error.required && signForm.$submitted">请填写出生年月</p>
+        </div>
+        <div class="form-group">
+            <label for="driver">驾驶证号码</label>
+            <input type="text" ng-model="user.driver" placeholder="驾驶证号码" class="form-control" id="driver" name="driver">
+            <p class="text-danger" ng-show="signForm.driver.$error.required && signForm.$submitted">请填写驾驶证号码</p>
+        </div>
+        <div class="form-group">
+            <label for="">参赛车型</label>
+            <input type="text" ng-model="user.models" placeholder="参赛车型" class="form-control" id="models" name="models">
+            <p class="text-danger" ng-show="signForm.models.$error.required && signForm.$submitted">请填写参赛车型</p>
+        </div>
+        <div class="form-group">
+            <label for="">运动执照号码</label>
+            <input type="text" ng-model="user.license" placeholder="运动执照号码" class="form-control" id="license" name="license">
+            <p class="text-danger" ng-show="signForm.license.$error.required && signForm.$submitted">请填写运动执照号码</p>
+        </div>
+        <div class="form-group">
+            <label for="">发动机排量</label>
+            <input type="text" ng-model="user.amount" placeholder="发动机排量" class="form-control" id="amount" name="amount">
+            <p class="text-danger" ng-show="signForm.amount.$error.required && signForm.$submitted">请填写发动机排量</p>
+        </div>
+        <div class="form-group">
+            <label for="">运动执照级别</label>
+            <select class="form-control" ng-model="user.level" name="level">
+                <option>R</option>
+                <option>F</option>
+            </select>
+            <p class="text-danger" ng-show="signForm.level.$error.required && signForm.$submitted">请填写运动执照级别</p>
+        </div>
+        <div class="form-group">
+            <label for="">报名组别</label>
+            <select class="form-control" ng-model="user.group" name="group">
+                <option>A组拉力车2000cc</option>
+                <option>B组拉力车1600cc</option>
+                <option>C组场地车</option>
+                <option>D组摩托车</option>
+            </select>
+            <p class="text-danger" ng-show="signForm.group.$error.required && signForm.$submitted">请填写报名组别</p>
+        </div>
+        <div class="form-group">
+            <label for="">报名费用</label>
+            <select class="form-control" ng-model="user.price" name="price">
+                <option>A、B组 / 1500RMB</option>
+                <option>C、D组 / 500RMB</option>
+            </select>
+            <p class="text-danger" ng-show="signForm.price.$error.required && signForm.$submitted">请填写报名费用</p>
+        </div>
+        
+        <div class="form-group">
+            <label for="workaddress">工作单位</label>
+            <input type="text" ng-model="user.workaddress" placeholder="工作单位" class="form-control" id="workaddress" name="workaddress">
+            <p class="text-danger" ng-show="signForm.workaddress.$error.required && signForm.$submitted">请填写工作单位</p>
+        </div>
+        <div class="form-group">
+            <label for="address">通讯地址</label>
+            <input type="text" ng-model="user.address" placeholder="通讯地址" class="form-control" id="address" name="address">
+            <p class="text-danger" ng-show="signForm.address.$error.required && signForm.$submitted">请填写通讯地址</p>
+        </div>
+        <div class="form-group">
+            <label for="now">填写日期</label>
+            <input type="date" ng-model="user.now" class="form-control" id="now" name="now">
+            <p class="text-danger" ng-show="signForm.now.$error.required && signForm.$submitted">请填写提交日期</p>
+        </div>
+        <button class="btn btn-primary form-control">提交</button>
+    </form>
+    <pre>user = {{user | json }}</pre>
+    <pre>master = {{master | json }}</pre>
+</div>

@@ -14,10 +14,11 @@ app.use(function(req, res, next) { //allow cross origin requests
 
 app.use(express.static(path.join(__dirname,'/angular')));
 app.use(express.static(path.join(__dirname,'/public')));
-// app.get('/',function(req, res){
-//     res.render('index');
-// });
 
+app.get('/igigi',function(req, res){
+        res.sendFile(path.join(__dirname,'/angular','/admin','allposts.html'));
+        // res.render('allposts');
+    })
 
 routes(app);
 app.listen(3000,function(){

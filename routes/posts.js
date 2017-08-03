@@ -8,6 +8,12 @@ var router = require('express').Router(),
 var Sign = mongoose.model('Sign',signSchema);
 
 router.route('/')
+      .get(function(req,res){
+          Sign.find(function(err,posts){
+              if(err) throw err;
+              res.json(posts);
+          })
+      })
       .post(upload.any(),function(req, res, next){
           if(req.files){
             req.files.forEach(function(file){
@@ -44,5 +50,15 @@ router.route('/')
             })
           }
       });
+
+router.route('/:id')
+      .get(function(req, res){
+            res.send(req.params);
+          Sign.findById(req.params.id,function(err,post){
+              if(err) throw err;
+            //   res.json(post);
+          })
+      });
+
 
 module.exports = router;

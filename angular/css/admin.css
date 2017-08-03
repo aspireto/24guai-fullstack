@@ -1,0 +1,9 @@
+ul,li{list-style: none;}
+#post img{width: 100px;height: 100px;display: block;position: absolute;float: left;top: 5px;left: 5px;}
+#post .jumbotron{position: relative;padding-top: 100px;}
+#post dl{width: 20%;float: left;margin: 0;}
+#post dt{font-size: 16px;}
+#post dd{font-size: 12px;}
+#post .btn-lg{display: inline;float: left;margin-left: 10px;}
+nav{text-align: center;}
+nav li {cursor: pointer;}

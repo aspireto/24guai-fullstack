@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.3.14/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.3.14/angular-resource.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.3.14/angular-route.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.0.1/jquery.min.js"></script>
+    <script src="../js/allPosts.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body ng-app="adminApp">
+    <div class="container" ng-controller="queryController">
+        <ul id="post">
+            <li ng-repeat="post in items" class="post">
+                <div class="jumbotron clearfix">
+                    <img ng-src="http://localhost:3000/images/{{post.image}}" class="img-circle" alt="">
+                    <dl>
+                        <dt>姓名:</dt>  
+                        <dd>{{post.username}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>移动电话:</dt>  
+                        <dd>{{post.tel}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>性别:</dt>  
+                        <dd>{{post.sex}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>身份证号码:</dt>  
+                        <dd>{{post.idcard}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>出生年月:</dt>  
+                        <dd>{{post.birthday | date:MM/dd/yyyy}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>驾驶证号码:</dt>  
+                        <dd>{{post.driver}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>参赛车型:</dt>  
+                        <dd>{{post.models}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>运动执照号码:</dt>  
+                        <dd>{{post.license}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>发动机排量:</dt>  
+                        <dd>{{post.amount}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>运动执照级别:</dt>  
+                        <dd>{{post.level}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>报名组别:</dt>  
+                        <dd>{{post.group}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>报名费用:</dt>  
+                        <dd>{{post.price}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>工作单位:</dt>  
+                        <dd>{{post.workaddress}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>通讯地址:</dt>  
+                        <dd>{{post.address}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt>填写日期:</dt>  
+                        <dd>{{post.now | date:MM/dd/yyyy}}</p></dd>
+                    </dl>
+                    <dl>
+                        <dt></dt>  
+                            <a class="btn btn-primary btn-lg" href="###" role="button">修改</a>
+                            <a class="btn btn-danger btn-lg" href="###" role="button">删除</a>
+                        </dd>
+                    </dl>
+                </div>
+            </li>
+
+            <!--nav-->
+             <nav>
+                <ul class="pagination">
+                    <li>
+                        <a ng-click="Previous()">
+                            <span>上一页</span>
+                        </a>
+                    </li>
+                    <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" >
+                        <a ng-click="selectPage(page)" >{{ page }}</a>
+                    </li>
+                    <li>
+                        <a ng-click="Next()">
+                            <span>下一页</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </ul>
+    </div>
+</body>
+</html>

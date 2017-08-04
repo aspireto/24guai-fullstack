@@ -140,8 +140,11 @@ app.controller('formController',function($scope, $http, $location){
 
 		var formData = new FormData();
 		for(key in $scope.user){
-			// console.log(key);
-			// console.log($scope.user[key]);
+			if($scope.user[key] == undefined){
+				return false;
+			}
+			console.log(key);
+			console.log($scope.user[key]);
 			formData.append(key, $scope.user[key]);
 		}
 		var file = $('#files')[0].files[0];

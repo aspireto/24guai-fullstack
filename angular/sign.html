@@ -3,7 +3,7 @@
         <h1></h1>
         <div class="form-group">
             <label for="username">姓名</label>
-            <input required="" type="text" ng-model="user.username" placeholder="姓名" class="form-control" name="username" id="username">
+            <input type="text" ng-model="user.username" placeholder="姓名" class="form-control" name="username" id="username" required>
             <p class="text-danger" ng-show="signForm.username.$error.required && signForm.$submitted">请填写姓名</p>
         </div>
         <div class="form-group">
@@ -22,9 +22,9 @@
                 <input type="radio" ng-model="$parent.sex" value="{{user.val}}" id="{{user.val}}">
                 <label for="{{user.val}}">{{user.sex}}</label>
             </div>-->
-            <input type="radio" ng-model="user.sex" value="male" id="male">
+            <input type="radio" ng-model="user.sex" value="male" id="male" name="sex">
             <label class="sex"  for="male">男</label>
-            <input type="radio" ng-model="user.sex" value="female" id="female">
+            <input type="radio" ng-model="user.sex" value="female" id="female" name="sex">
             <label class="sex" for="female">女</label>  
             <p class="text-danger">{{user.msg}}</p>
         </div>
@@ -101,7 +101,22 @@
             <input required="" type="date" ng-model="user.now" class="form-control" id="now" name="now">
             <p class="text-danger" ng-show="signForm.now.$error.required && signForm.$submitted">请填写提交日期</p>
         </div>
-        <button class="btn btn-primary form-control">提交</button>
+        <button ng-disabled="
+                            signForm.username.$dirty && signForm.username.$invalid ||
+                            signForm.tel.$dirty && signForm.tel.$invalid ||
+                            signForm.idcard.$dirty && signForm.idcard.$invalid ||
+                            signForm.birthday.$dirty && signForm.birthday.$invalid ||
+                            signForm.driver.$dirty && signForm.driver.$invalid ||
+                            signForm.models.$dirty && signForm.models.$invalid ||
+                            signForm.license.$dirty && signForm.license.$invalid ||
+                            signForm.amount.$dirty && signForm.amount.$invalid ||
+                            signForm.level.$dirty && signForm.level.$invalid ||
+                            signForm.group.$dirty && signForm.group.$invalid ||
+                            signForm.price.$dirty && signForm.price.$invalid ||
+                            signForm.workaddress.$dirty && signForm.workaddress.$invalid ||
+                            signForm.address.$dirty && signForm.address.$invalid ||
+                            signForm.now.$dirty && signForm.now.$invalid"
+         class="btn btn-primary form-control">提交</button>
     </form>
     <!--<pre>user = {{user | json }}</pre>
     <pre>master = {{master | json }}</pre>-->

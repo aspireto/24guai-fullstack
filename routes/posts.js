@@ -53,10 +53,16 @@ router.route('/')
 
 router.route('/:id')
       .get(function(req, res){
-            res.send(req.params);
+            // res.send(req.params);
           Sign.findById(req.params.id,function(err,post){
               if(err) throw err;
-            //   res.json(post);
+              res.json(post);
+          })
+      })
+      .delete(function(req, res){
+          Sign.findByIdAndRemove(req.params.id,function(err,post){
+              if(err) throw err;
+              res.json(post);
           })
       });
 

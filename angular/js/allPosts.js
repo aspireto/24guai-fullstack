@@ -1,5 +1,5 @@
 var app = angular.module('adminApp',['ngResource','ngRoute']);
-app.controller('queryController',['$scope','$resource',function($scope,$resource){
+app.controller('queryController',['$scope','$resource','$http',function($scope,$resource,$http){
     var Posts = $resource('http://localhost:3000/posts');
     Posts.query(function(posts){
         $scope.posts = posts;
@@ -50,5 +50,16 @@ app.controller('queryController',['$scope','$resource',function($scope,$resource
         $scope.Next = function () {
             $scope.selectPage($scope.selPage + 1);
         };
+        $scope.delete = function(post){
+            console.log(post._id);
+            $http({
+                method : 'DELETE',
+                url : '/posts/' + post._id
+            }).then(function successCallback(){
+                $scope.items.splice($scope.items.indexOf(post),1);
+            },function errorCallback(err){
+                if(err) throw err;
+            });
+        }
     });
 }]);

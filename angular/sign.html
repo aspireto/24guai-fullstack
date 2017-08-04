@@ -3,18 +3,18 @@
         <h1></h1>
         <div class="form-group">
             <label for="username">姓名</label>
-            <input type="text" ng-model="user.username" placeholder="姓名" class="form-control" name="username" id="username" required>
+            <input type="text" ng-model="user.username" placeholder="姓名" class="form-control" name="username" id="username" required="">
             <p class="text-danger" ng-show="signForm.username.$error.required && signForm.$submitted">请填写姓名</p>
         </div>
         <div class="form-group">
             <label for="files">头像照片</label>
-            <input type="file" ng-model="user.avator" placeholder="头像" class="form-control" id="files" name="avator">
-            <p class="text-danger">{{user.msg2}}</p>
+            <input type="file" ng-model="user.avator" placeholder="头像" class="form-control" id="files" name="avator" required="">
+            <p class="text-danger" ng-show="signForm.avator.$error.required && signForm.$submitted">请上传头像</p>
         </div>
         
         <div class="form-group">
             <label for="tel">移动电话</label>
-            <input required="" type="tel" ng-model="user.tel" placeholder="移动电话" class="form-control" id="tel" name="tel">
+            <input required type="tel" ng-model="user.tel" placeholder="移动电话" class="form-control" id="tel" name="tel">
             <p class="text-danger" ng-show="signForm.tel.$error.required && signForm.$submitted">请填写移动电话</p>
         </div>
         <div class="form-group">
@@ -64,6 +64,9 @@
             <select required="" class="form-control" ng-model="user.level" name="level">
                 <option>R</option>
                 <option>F</option>
+                <option>G</option>
+                <option>E</option>
+                <option>C</option>
             </select>
             <p class="text-danger" ng-show="signForm.level.$error.required && signForm.$submitted">请填写运动执照级别</p>
         </div>
@@ -96,6 +99,23 @@
             <input required="" type="text" ng-model="user.address" placeholder="通讯地址" class="form-control" id="address" name="address">
             <p class="text-danger" ng-show="signForm.address.$error.required && signForm.$submitted">请填写通讯地址</p>
         </div>
+        <!--update-->
+         <div class="form-group">
+            <label for="leadername">领航员姓名</label>
+            <input required="required" type="text" ng-model="user.leadername" placeholder="领航员姓名" class="form-control" id="leadername" name="leadername">
+            <p class="text-danger" ng-show="signForm.leadername.$error.required && signForm.$submitted">请填写领航员姓名</p>
+        </div>
+        <div class="form-group">
+            <label for="leaderidcard">领航员身份证号</label>
+            <input required="" type="text" ng-model="user.leaderidcard" placeholder="领航员身份证号" class="form-control" id="leaderidcard" name="leaderidcard">
+            <p class="text-danger" ng-show="signForm.leaderidcard.$error.required && signForm.$submitted">请填写领航员身份证号</p>
+        </div>
+         <div class="form-group">
+            <label for="leaderlicense">领航员赛证号</label>
+            <input required="" type="text" ng-model="user.leaderlicense" placeholder="领航员赛证号" class="form-control" id="leaderlicense" name="leaderlicense">
+            <p class="text-danger" ng-show="signForm.leaderlicense.$error.required && signForm.$submitted">请填写领航员赛证号</p>
+        </div>
+        <!---->
         <div class="form-group">
             <label for="now">填写日期</label>
             <input required="" type="date" ng-model="user.now" class="form-control" id="now" name="now">
@@ -103,6 +123,7 @@
         </div>
         <button ng-disabled="
                             signForm.username.$dirty && signForm.username.$invalid ||
+                            signForm.avator.$dirty && signForm.avator.$invalid ||
                             signForm.tel.$dirty && signForm.tel.$invalid ||
                             signForm.idcard.$dirty && signForm.idcard.$invalid ||
                             signForm.birthday.$dirty && signForm.birthday.$invalid ||
@@ -115,6 +136,9 @@
                             signForm.price.$dirty && signForm.price.$invalid ||
                             signForm.workaddress.$dirty && signForm.workaddress.$invalid ||
                             signForm.address.$dirty && signForm.address.$invalid ||
+                            signForm.leadername.$dirty && signForm.leadername.$invalid ||
+                            signForm.leaderidcard.$dirty && signForm.leaderidcard.$invalid ||
+                            signForm.leaderlicense.$dirty && signForm.leaderlicense.$invalid ||
                             signForm.now.$dirty && signForm.now.$invalid"
          class="btn btn-primary form-control">提交</button>
     </form>

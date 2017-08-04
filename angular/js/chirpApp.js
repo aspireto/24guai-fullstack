@@ -131,28 +131,20 @@ app.controller('mainController',function($scope){
 app.controller('formController',function($scope, $http, $location){
 	// $scope.submitted = false;
 	$scope.submit = function(){
-		
 		if($scope.user.sex == undefined){
 			$scope.user.msg = '请选择性别';
 			return false;
 		}
-		
 
 		var formData = new FormData();
 		for(key in $scope.user){
-			if($scope.user[key] == undefined){
-				return false;
-			}
-			console.log(key);
-			console.log($scope.user[key]);
+			
+			// console.log(key);
+			// console.log($scope.user[key]);
 			formData.append(key, $scope.user[key]);
 		}
 		var file = $('#files')[0].files[0];
-		console.log(file);
-		if(file == undefined){
-			$scope.user.msg2 = '请上传照片';
-			return false;
-		}
+		// console.log(file);
 		formData.append('image', file);
 		$http.post('http://localhost:3000/posts',formData,{
 			tranformRequest : angular.identity,

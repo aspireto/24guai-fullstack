@@ -17,6 +17,9 @@ var signSchema = new Schema({
     price:      String,
     workaddress:String,
     address:    String,
+    leadername: String,
+    leaderidcard: String,
+    leaderlicense: String,
     now:        Date
 });
 

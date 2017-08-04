@@ -37,6 +37,9 @@ router.route('/')
                         price:      req.body.price,
                         workaddress:req.body.workaddress,
                         address:    req.body.address,
+                        leadername: req.body.leadername,
+                        leaderidcard: req.body.leaderidcard,
+                        leaderlicense: req.body.leaderlicense,
                         now:        req.body.now
                     });
                     sign.save(function(err,result){

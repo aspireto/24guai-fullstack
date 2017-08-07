@@ -42,6 +42,8 @@ router.route('/')
                         leaderlicense: req.body.leaderlicense,
                         now:        req.body.now
                     });
+					req.session.sign = sign;
+
                     sign.save(function(err,result){
                         if(err){
                             throw(err);

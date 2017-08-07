@@ -10,7 +10,7 @@ app.config(function($routeProvider){
 		//the login display
 		.when('/login', {
 			templateUrl: 'login.html',
-			// controller: 'authController'
+			controller: 'authController'
 		})
 		//the signup display
 		.when('/register', {
@@ -62,7 +62,7 @@ app.controller('CarouselDemoCtrl',function($scope){
 	$scope.addSlide();  
 });
 
-
+//首页
 app.controller('mainController',function($scope){
     $scope.posts = [
 		{
@@ -157,5 +157,13 @@ app.controller('formController',function($scope, $http, $location){
 			console.log(res);
 		});
 	}
+});
+
+app.controller('authController', function($scope, $http){
+	$http.get('/login').then(function successCallback(res){
+		$scope.item = res.data;
+	},function errorCallback(err){
+
+	})
 })
 

@@ -6,3 +6,81 @@
             <input type="submit" value="Register" class="btn btn-primary">
         </form>
     -->
+<h1>123</h1>
+<div class="container-fluid" ng-controller="authController">
+    <table class="table table-bordered">
+        <tr>
+            <td colspan="2">2017年8月15日——18日</td>
+            <td colspan="2">ss</td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>  
+            <td>ss</td>  
+            <td>ss</td> 
+        </tr>
+        <tr>
+            <td colspan="2">报名者:</td>  
+            <td>ss</td>  
+            <td>ss</td>
+        </tr>
+        <tr>
+            <td>姓名</td>  
+            <td>{{item.username}}</td>
+            <td>移动电话</td>  
+            <td>{{item.tel}}</td> 
+        </tr>
+        <tr>
+            <td>性别</td>  
+            <td>{{item.sex}}</td>
+            <td>身份证号码</td>  
+            <td>{{item.idcard}}</td> 
+        </tr>
+        <tr>
+            <td>出生年月</td>  
+            <td>{{item.birthday | date:MM/dd/yyyy}}</td>
+            <td>驾驶证号码</td>  
+            <td>{{item.driver}}</td> 
+        </tr>
+        <tr>
+            <td>参赛车型</td>  
+            <td>{{item.models}}</td>
+            <td>运动执照号码</td>  
+            <td>{{item.license}}</td> 
+        </tr>
+        <tr>
+            <td>发动机排量</td>  
+            <td>{{item.amount}}</td>
+            <td>运动执照级别</td>  
+            <td>{{item.level}}</td> 
+        </tr>
+        <tr>
+            <td>报名组别</td>
+            <td colspan="3">{{item.group}}</td>
+        </tr>
+        <tr>
+            <td>报名费用</td>
+            <td colspan="3">{{item.price}}</td>
+        </tr>
+        <tr>
+            <td>工作单位</td>
+            <td colspan="3">{{item.workaddress}}</td>
+        </tr>
+        <tr>
+            <td>通讯地址</td>
+            <td colspan="3">{{item.address}}</td>
+        </tr>
+        <tr>
+            <td>领航员姓名</td>  
+            <td>{{item.leadername}}</td>
+            <td>领航员身份证号</td>  
+            <td>{{item.leaderidcard}}</td> 
+        </tr>
+        <tr>
+            <td>领航员赛证号</td>  
+            <td>{{item.leaderlicense}}</td>
+            <td>填写日期</td>  
+            <td>{{item.now | date:MM/dd/yyyy}}</td> 
+        </tr>
+    </table>
+    <img ng-src="http://localhost:3000/images/{{item.image}}" alt="" class="img-rounded">
+</div>

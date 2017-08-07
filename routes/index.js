@@ -4,4 +4,5 @@ module.exports = function(app){
     });
     
     app.use('/posts',require('./posts'));
+	app.use('/login',require('./login'));
 };
